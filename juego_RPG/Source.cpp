@@ -1,65 +1,127 @@
 #include <iostream>
 #include<vector>
 using namespace std;
-void ataque(string nombre, int vida, int ataque, int defensa);
 class enemy
 {
 public:
     string nombre;
-    int vida;
-    int ataque;
-    int defensa;
+    int life ;
+    int attack ;
+    int armour ;
 };
 class player
 {
 public:
-    int vida;
-    int ataque;
-    int defensa;
+    string nombre;
+    int life = 0;
+    int attack = 0;
+    int armour = 0;
     vector<string> inventory[10];
 };
-
+void battle(enemy defender, player& player1);
+void showMap(int map);
+void attack();
+void defend();
+void dash();
+void useItem();
+void randomItem();
 int main()
 {
     //Declarado de enemigos
     enemy esbirro;
     esbirro.nombre = "esbirro";
-    esbirro.vida = 2;
-    esbirro.ataque = 1;
-    esbirro.defensa = 1;
+    esbirro.life = 2;
+    esbirro.attack = 1;
+    esbirro.armour = 1;
     enemy barbaro;
     barbaro.nombre = "barbaro";
-    barbaro.vida = 5;
-    barbaro.ataque = 2;
-    barbaro.defensa = 5;
+    barbaro.life = 5;
+    barbaro.attack = 2;
+    barbaro.armour = 5;
     enemy arquero;
     arquero.nombre = "arquero";
-    arquero.vida = 2;
-    arquero.ataque = 5;
-    arquero.defensa = 2;
+    arquero.life = 2;
+    arquero.attack  = 5;
+    arquero.armour = 2;
     enemy valquiria;
     valquiria.nombre = "valquiria";
-    valquiria.vida = 8;
-    valquiria.ataque = 5;
-    valquiria.defensa = 5;
+    valquiria.life = 8;
+    valquiria.attack = 5;
+    valquiria.armour = 5;
     enemy oni;
     oni.nombre = "oni";
-    oni.vida = 8;
-    oni.ataque = 8;
-    oni.defensa = 8;
+    oni.life = 8;
+    oni.attack = 8;
+    oni.armour = 8;
     //declarado del boss
     enemy boss;
     boss.nombre = "dragon";
-    boss.vida = 15;
-    boss.ataque = 15;
-    boss.defensa = 15;
+    boss.life = 15;
+    boss.attack = 15;
+    boss.armour = 15;
+    //declarado del player
+    player Player1;
+    Player1.life = 10;
+    Player1.attack = 5;
+    Player1.armour = 10;
+    //declarado de variables
+    int map = 0;
+    showMap(map);
+    battle(esbirro, Player1);
+    return 0;
 }
-// ataque
-void ataque(string nombre, int vida, int ataque, int defensa)
+//show map progress
+void showMap(int map)
 {
-    cout << nombre << endl;
-    cout << "vida: " << vida << endl;
-    cout << " ataque: " << ataque << endl;
-    cout << " defensa: " << defensa << endl;
+    cout << "advance in map " << map << " of 10" << endl;
+    for (int i = 0; i <= 10; i++)
+    {
+        if (i < map)
+        {
+            cout << " -";
+        }
+        else if (i == map)
+        {
+            cout << " x";
+        }
+        else
+        {
+            cout << " -";
+        }
+    }
+    cout << endl;
+}
+// battlestart
+void battle(enemy defender, player &player1 )
+{
+    cout << defender.nombre << endl;
+    cout << "vida: " << defender.life << endl;
+    cout << " ataque: " << defender.attack << endl;
+    cout << " defensa: " << defender.armour << endl;
+    cout << "player = " << player1.attack;
+}
+// player use atack
+void attack() 
+{
+
+}
+// player use defend
+void defend() 
+{
+
+}
+// player use dash
+void dash()
+{
+
+}
+// player use item
+void useItem()
+{
+
+}
+// random item generador after win a battle
+void randomItem()
+{
 
 }
