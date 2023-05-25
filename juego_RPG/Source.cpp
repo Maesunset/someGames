@@ -107,7 +107,7 @@ int main()
             cout << "al entrar al cuarto te encuentras a un esbirro esperandote" << endl;
             system("pause");
             battle(esbirro, Player1);
-            if (Player1.life < 0)
+            if (Player1.life > 0)
             {
                 cout << "que buena pelea " << Player1.nombre << " vamos tu puedes con mas" << endl;
                 map++;
@@ -121,7 +121,7 @@ int main()
             cout << "al entrar al cuarto te encuentras a un barbaro esperandote" << endl;
             system("pause");
             battle(barbaro, Player1);
-            if (Player1.life < 0)
+            if (Player1.life > 0)
             {
                 cout << "que buena pelea " << Player1.nombre << " vamos tu puedes con mas" << endl;
                 map++;
@@ -135,7 +135,7 @@ int main()
             cout << "al entrar al cuarto te encuentras a un arquero esperandote" << endl;
             system("pause");
             battle(arquero, Player1);
-            if (Player1.life < 0)
+            if (Player1.life > 0)
             {
                 cout << "que buena pelea " << Player1.nombre << " vamos tu puedes con mas" << endl;
                 map++;
@@ -149,7 +149,7 @@ int main()
             cout << "al entrar al cuarto te encuentras a una valquiria esperandote" << endl;
             system("pause");
             battle(valquiria, Player1);
-            if (Player1.life<0)
+            if (Player1.life>0)
             {
                 cout << "que buena pelea " << Player1.nombre << " vamos tu puedes con mas" << endl;
                 map++;
@@ -163,7 +163,7 @@ int main()
             cout << "al entrar al cuarto te encuentras a un gran oni esperandote" << endl;
             system("pause");
             battle(oni, Player1);
-            if (Player1.life < 0)
+            if (Player1.life > 0)
             {
                 cout << "que buena pelea " << Player1.nombre << " vamos tu puedes con mas" << endl;
                 map++;
@@ -561,7 +561,44 @@ void useItem(player &player1)
 
 }
 // random item generador after win a battle
-void randomItem(player &player1)
+void randomItem(player& player1)
 {
-
+    srand((unsigned)time(NULL));
+    int random = (rand() % 3) + 1, aux;
+    switch (random)
+    {
+    case 1:
+        cout << "en los pasillos te encontraste con una daga" << endl;
+        if (player1.inventory->size() < 10)
+        {
+            player1.inventory->push_back("DAGA");
+        }
+        else
+        {
+            cout << " no te queda mas espacio en el inventario" << endl;
+        }
+        break;
+    case 2:
+        cout << "en los pasillos te encontraste con una pocion" << endl;
+        if (player1.inventory->size() < 10)
+        {
+            player1.inventory->push_back("POCION");
+        }
+        else
+        {
+            cout << " no te queda mas espacio en el inventario" << endl;
+        }
+        break;
+    case 3:
+        cout << "en los pasillos te encontraste con una armadura" << endl;
+        if (player1.inventory->size() < 10)
+        {
+            player1.inventory->push_back("ARMADURA");
+        }
+        else
+        {
+            cout << " no te queda mas espacio en el inventario" << endl;
+        }
+        break;
+    }
 }
