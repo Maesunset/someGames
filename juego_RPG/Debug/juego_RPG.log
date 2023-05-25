@@ -1,9 +1,21 @@
 ﻿  Source.cpp
-C:\Users\jared\OneDrive\Escritorio\MaesunsetGames\juego_RPG\Source.cpp(104,14): warning C4551: la llamada a la función no tiene lista de argumentos
-C:\Users\jared\OneDrive\Escritorio\MaesunsetGames\juego_RPG\Source.cpp(265,53): warning C4244: '-=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\jared\OneDrive\Escritorio\MaesunsetGames\juego_RPG\Source.cpp(276,51): warning C4244: '-=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\jared\OneDrive\Escritorio\MaesunsetGames\juego_RPG\Source.cpp(283,54): warning C4244: '-=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\jared\OneDrive\Escritorio\MaesunsetGames\juego_RPG\Source.cpp(294,52): warning C4244: '-=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\jared\OneDrive\Escritorio\MaesunsetGames\juego_RPG\Source.cpp(303,34): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\jared\OneDrive\Escritorio\MaesunsetGames\juego_RPG\Source.cpp(313,34): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-  juego_RPG.vcxproj -> C:\Users\jared\OneDrive\Escritorio\MaesunsetGames\juego_RPG\Debug\juego_RPG.exe
+C:\Users\jared\Desktop\someGames\juego_RPG\Source.cpp(181,14): warning C4551: la llamada a la función no tiene lista de argumentos
+C:\Users\jared\Desktop\someGames\juego_RPG\Source.cpp(347,53): warning C4244: '-=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\jared\Desktop\someGames\juego_RPG\Source.cpp(358,51): warning C4244: '-=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\jared\Desktop\someGames\juego_RPG\Source.cpp(365,54): warning C4244: '-=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\jared\Desktop\someGames\juego_RPG\Source.cpp(376,52): warning C4244: '-=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\jared\Desktop\someGames\juego_RPG\Source.cpp(385,34): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\jared\Desktop\someGames\juego_RPG\Source.cpp(395,34): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\jared\Desktop\someGames\juego_RPG\Source.cpp(417,55): warning C4244: '-=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\jared\Desktop\someGames\juego_RPG\Source.cpp(427,53): warning C4244: '-=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\jared\Desktop\someGames\juego_RPG\Source.cpp(434,53): warning C4244: '-=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\jared\Desktop\someGames\juego_RPG\Source.cpp(444,51): warning C4244: '-=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\jared\Desktop\someGames\juego_RPG\Source.cpp(462,54): warning C4244: '-=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\jared\Desktop\someGames\juego_RPG\Source.cpp(472,52): warning C4244: '-=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\jared\Desktop\someGames\juego_RPG\Source.cpp(406,36): warning C4101: 'aux': variable local sin referencia
+C:\Users\jared\Desktop\someGames\juego_RPG\Source.cpp(490,54): warning C4244: '-=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\jared\Desktop\someGames\juego_RPG\Source.cpp(499,52): warning C4244: '-=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\jared\Desktop\someGames\juego_RPG\Source.cpp(507,52): warning C4244: '-=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\jared\Desktop\someGames\juego_RPG\Source.cpp(515,50): warning C4244: '-=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\jared\Desktop\someGames\juego_RPG\Source.cpp(482,36): warning C4101: 'aux': variable local sin referencia
+  juego_RPG.vcxproj -> C:\Users\jared\Desktop\someGames\juego_RPG\Debug\juego_RPG.exe

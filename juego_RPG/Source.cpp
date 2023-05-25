@@ -26,7 +26,7 @@ void attack(enemy& defender, player& player1);
 void defend(enemy& defender, player& player1);
 void dash(enemy& defender, player& player1);
 void useItem(player& player1);
-void randomItem();
+void randomItem(player& player1);
 int main()
 {
     //Declarado de enemigos
@@ -34,7 +34,7 @@ int main()
     esbirro.nombre = "esbirro";
     esbirro.life = 2;
     esbirro.attack = 1;
-    esbirro.armour = 1;
+    esbirro.armour = 2;
     enemy barbaro;
     barbaro.nombre = "barbaro";
     barbaro.life = 5;
@@ -68,11 +68,9 @@ int main()
     Player1.armour = 10;
     //declarado de variables
     int map = 0;
-    //
 
-    //iniccio juego
+    //inicio juego
     cout << "Hola..." << endl;
-    system("pause");
     cout << "Despierta, Despierta" << endl;
     system("pause");
     cout << "hola, cual es tu nombre" << endl;
@@ -82,10 +80,9 @@ int main()
     cout << "Destruyo todo a su paso... " << endl;
     system("pause");
     cout << "Te das la vuelta y corres" << endl;
-    system("pause");
     cout << "lux te intercepta rapidamente y te dice:  " << endl;
     system("pause");
-    cout << "Tu me puedes ayudar solo coupas ir a su castillo y pelear contra sus secuases" << endl;
+    cout << "Tu me puedes ayudar solo ocupas ir a su castillo y pelear contra sus secuases" << endl;
     cout << "Es facil, solo ten esta espada y haz lo tuyo, te llevare  al castillo" << endl;
     cout << "Apareces en la entrada del castillo" << endl;
     system("pause");
@@ -93,15 +90,110 @@ int main()
     system("pause");
     battle(esbirro, Player1);
     system("cls");
-    cout << "felicidades " << Player1.nombre << "ganaste tu primer pelea" << endl;
+    cout << "felicidades " << Player1.nombre << " ganaste tu primer pelea" << endl;
     do
     {
+        system("pause");
+        randomItem(Player1);
         srand((unsigned)time(NULL));
         int random = (rand() % 5) + 1;
         bool exit = false;
+        cout << "avanzaste al siguiente cuarto" << endl;
         cout << "este es tu progreso en el mapa" << endl;
         showMap(map);
+        switch (random)
+        {
+        case 1:
+            cout << "al entrar al cuarto te encuentras a un esbirro esperandote" << endl;
+            system("pause");
+            battle(esbirro, Player1);
+            if (Player1.life < 0)
+            {
+                cout << "que buena pelea " << Player1.nombre << " vamos tu puedes con mas" << endl;
+                map++;
+            }
+            else
+            {
+                exit = true;
+            }
+            break;       
+        case 2:
+            cout << "al entrar al cuarto te encuentras a un barbaro esperandote" << endl;
+            system("pause");
+            battle(barbaro, Player1);
+            if (Player1.life < 0)
+            {
+                cout << "que buena pelea " << Player1.nombre << " vamos tu puedes con mas" << endl;
+                map++;
+            }
+            else
+            {
+                exit = true;
+            }
+            break;        
+        case 3:
+            cout << "al entrar al cuarto te encuentras a un arquero esperandote" << endl;
+            system("pause");
+            battle(arquero, Player1);
+            if (Player1.life < 0)
+            {
+                cout << "que buena pelea " << Player1.nombre << " vamos tu puedes con mas" << endl;
+                map++;
+            }
+            else
+            {
+                exit = true;
+            }
+            break;        
+        case 4:
+            cout << "al entrar al cuarto te encuentras a una valquiria esperandote" << endl;
+            system("pause");
+            battle(valquiria, Player1);
+            if (Player1.life<0)
+            {
+                cout << "que buena pelea " << Player1.nombre << " vamos tu puedes con mas" << endl;
+                map++;
+            }
+            else 
+            {
+                exit = true;
+            }
+            break;        
+        case 5:
+            cout << "al entrar al cuarto te encuentras a un gran oni esperandote" << endl;
+            system("pause");
+            battle(oni, Player1);
+            if (Player1.life < 0)
+            {
+                cout << "que buena pelea " << Player1.nombre << " vamos tu puedes con mas" << endl;
+                map++;
+            }
+            else
+            {
+                exit = true;
+            }
+            break;        
+        }
+        if (map==10)
+        {
+            randomItem(Player1);
+            cout << "entraste al cuarto del gran dragron de ojos azules" << endl;
+            cout << "el imponente dragon te mira al entrar y te dice" << endl;
+            cout << "ESTAS LISTO PARA UN VERDADERO RETO" << endl;
+            system("pause");
+            battle(boss, Player1);
+            if (Player1.life < 0)
+            {
+                cout << "lo hiciste liveraste estas tierras de su malvado tirano" << endl;
+                exit = true;
+            }
+        }
     } while (exit);
+    if (Player1.life<0)
+    {
+        cout << "lux te mira con desprecio mientras dice" << endl;
+        cout << "esperaba mas de ti " << Player1.nombre << endl;
+    }
     return 0;
 }
 //show map progress
@@ -179,12 +271,12 @@ void battle(enemy defender, player &player1 )
             }
             break;
         }
-        if (defender.life>=0)
+        if (defender.life<=0)
         {
             cout << "bien hecho le ganaste al " << defender.nombre << endl;
             exit = true;
         }
-        else if (player1.life>=0)
+        else if (player1.life<=0)
         {
             cout << "oh no te ha ganado un simple" << defender.nombre << endl;
             exit = true;
@@ -396,7 +488,72 @@ void defend(enemy& defender, player& player1)
 // player use dash
 void dash(enemy& defender, player& player1)
 {
-
+    srand((unsigned)time(NULL));
+    int random = (rand() % 3) + 1, aux;
+    switch (random)
+    {
+        // dash x attack
+    case 1:
+        if (defender.armour>0)
+        {
+            cout << "al esquivar el enemigo se tropiesa y se hace " << defender.attack * 5 << "de damage en su armadura" << endl;
+            defender.armour -= (defender.attack * .5);
+            if (defender.armour<0)
+            {
+                defender.armour = 0;
+            }
+        }
+        else
+        {
+            cout << "al esquivar el enemigo se tropiesa y se hace " << defender.attack * 5 << "de damage en su vida" << endl;
+            defender.life -= (defender.attack * .5);
+        }
+        break;
+        //dash x defend
+    case 2:
+        cout << "cuando esquivas el se agacha, te caes y te haces " << player1.attack * .5 <<" de damage" << endl;
+        if (player1.armour > 0)
+        {
+            player1.armour -= (player1.attack * .5);
+            if (player1.armour < 0)
+            {
+                player1.armour = 0;
+            }
+        }
+        else
+        {
+            player1.life -= (player1.attack * .5);
+        }
+        break;
+        // dash x dash
+    case 3:
+        cout << "Chocaron entre si al intentar esquivar al mismo lugar, los dos se hacen dos de damage" << endl;
+        if (player1.armour > 0)
+        {
+            player1.armour -= 2;
+            if (player1.armour < 0)
+            {
+                player1.armour = 0;
+            }
+        }
+        else
+        {
+            player1.life -= 2;
+        }        
+        if (defender.armour > 0)
+        {
+            defender.armour -= 2;
+            if (defender.armour < 0)
+            {
+                defender.armour = 0;
+            }
+        }
+        else
+        {
+            defender.life -= 2;
+        }
+        break;
+    }
 }
 // player use item
 void useItem(player &player1)
@@ -404,7 +561,7 @@ void useItem(player &player1)
 
 }
 // random item generador after win a battle
-void randomItem()
+void randomItem(player &player1)
 {
 
 }
