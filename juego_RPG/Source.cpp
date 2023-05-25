@@ -2,6 +2,8 @@
 #include<vector>
 #include<time.h>  
 #include<stdlib.h>
+#include"./numberValidation.h"
+
 using namespace std;
 class enemy
 {
@@ -239,7 +241,7 @@ void battle(enemy defender, player &player1 )
         cout << "2) defender" << endl;
         cout << "3) esquivar" << endl;
         cout << "4) usar items" << endl;
-        cin >> playerChoice;
+        playerChoice = checkNumberInput();
         switch (playerChoice)
         {
             //case ataque

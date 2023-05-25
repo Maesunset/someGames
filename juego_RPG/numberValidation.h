@@ -1,6 +1,11 @@
 #include<iostream>
 #include<string>
 
+using namespace std;
+
+int  checkNumberInput();
+bool checkDigit(char check);
+
 int  checkNumberInput(){
 
     std::string temporalPlayerInput{};
@@ -8,10 +13,10 @@ int  checkNumberInput(){
    
     do{
         
-       std::cin>>temporalPlayerInput;
-       isValid = checkDigit(temporalPlayerInput[0]);
-       if(!isValid){
-        std::cout<<"Invalid input"<<std::endl;
+        cin>>temporalPlayerInput;
+        isValid = checkDigit(temporalPlayerInput[0]);
+        if(!isValid){
+            cout<<"Invalid input"<<endl;
        }
 
     }while(!isValid);
