@@ -1,2 +1,9 @@
 ﻿  Source.cpp
+C:\Users\jared\OneDrive\Escritorio\MaesunsetGames\juego_RPG\Source.cpp(104,14): warning C4551: la llamada a la función no tiene lista de argumentos
+C:\Users\jared\OneDrive\Escritorio\MaesunsetGames\juego_RPG\Source.cpp(265,53): warning C4244: '-=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\jared\OneDrive\Escritorio\MaesunsetGames\juego_RPG\Source.cpp(276,51): warning C4244: '-=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\jared\OneDrive\Escritorio\MaesunsetGames\juego_RPG\Source.cpp(283,54): warning C4244: '-=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\jared\OneDrive\Escritorio\MaesunsetGames\juego_RPG\Source.cpp(294,52): warning C4244: '-=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\jared\OneDrive\Escritorio\MaesunsetGames\juego_RPG\Source.cpp(303,34): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\jared\OneDrive\Escritorio\MaesunsetGames\juego_RPG\Source.cpp(313,34): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
   juego_RPG.vcxproj -> C:\Users\jared\OneDrive\Escritorio\MaesunsetGames\juego_RPG\Debug\juego_RPG.exe
